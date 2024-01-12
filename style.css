@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(107, 232, 241);
+    font-size: 50px;
+    padding: 30px;
+    padding-top: 100px;
+}
+
+h2 {
+    text-align: center;
+}
+
+div.login {
+    background-color: whitesmoke;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 500px;
+    width: 500px;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.guardarNombre {
+    width: 100px;
+    align-self: center;
+    background-color: rgb(181, 108, 250);
+}
+
+.card {
+    width: 600px;
+    margin-left: 350px;
+}
+
+.card-title {
+    background-color:  rgb(46, 4, 66);
+    padding: 20px 10px;
+    color:  whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.card-text {
+    font-weight: bold;
+    font-size: large;
+    letter-spacing: 2px;
+}
+
+p.mensaje {
+    text-align: center;
+    font-size: large;
+    padding: 20px;
+    /* background-color: black; */
+    color: rgb(247, 239, 239);
+}
+
+p.mensajeResultado {
+    text-align: center;
+    background-color: black;
+    color: rgb(247, 239, 239);
+    font-size: x-large;
+    border: 2px solid yellowgreen;
+    margin: 50px;
+    padding: 20px;
+    width: 400px;
+}
+
+label{
+    text-align: center;
+}
+
+input {
+    align-self: center;
+    border: 1px solid black;
+    width: 100%;
+    padding: 10px;
+}
+
+button {
+    align-self: center;
+    color:whitesmoke;
+    letter-spacing: 2px;
+    width: 200px;
+    padding: 10px;
+    font-weight: bold;
+    background-color: rgb(46, 4, 66);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.terminar, .resultados{
+    display: inline;
+    margin-top: 20px;
+    margin-left: 560px;
+}
+
+.finalizarBoton {
+    margin-left: 150px;
+}
+
+
+
+
+
+
+
+

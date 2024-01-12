@@ -1,44 +1,9 @@
-//pedir nombre al jugador y dar la bienvenida/despedida
-let nombre = prompt("Por favor, ingresa tu nombre")
+// //pedir nombre al jugador
+let nombre
 let respuestaJugador = ""
+let partida
 
-function saludar(saludo) {
-    if (saludo == 'hola') {
-        alert('Hola ' + nombre + ' ¿Comenzamos a jugar?')
-    } else if (saludo == 'adios') {
-        alert('Adios ' + nombre + ' ¡Gracias por jugar!')
-    }
-}
-saludar('hola');
-
-
-//clase pregunta para construir el cuestionario del quiz
-class Pregunta {
-    constructor(consigna, opciones, respuesta, acierto) {
-        this.consigna = consigna;
-        this.opciones = opciones;
-        this.respuesta = respuesta;
-        this.acierto = acierto;
-    }
-}
-
-
-//crear las preguntas del juego utilizando la clase pregunta y las guardo en un array
-let preguntas = [
-    new Pregunta ("¿Cuántas Casas hay en Hogwarts? \n 1. TRES  \n 2. CUATRO \n 3. CINCO", [1, 2, 3], 2, true),
-    new Pregunta ("¿Cuál es el verdadero nombre de Voldemort? \n 1. TOM RIDDLE \n 2. RON RIDDLE \n 3. BOB RIDDLE", [1 , 2, 3], 1, true),
-    new Pregunta ("¿Cuál de las siguientes opciones NO es una reliquia de la muerte? \n 1. VARITA DE SAUCO \n 2. CAPA DE INVISIBILIDAD \n 3. CALIZ DE FUEGO", [1, 2, 3], 3, true),
-    new Pregunta ("¿Cúal es el nombre el profesor Snape? \n 1. ALBUS \n 2. SEVERUS \n 3. RUBEUS", [1, 2, 3], 2, true),
-    new Pregunta ("¿Qué animal tiene como mascota de Hermione? \n 1. LECHUZA \n 2. RATA \n 3. GATO", [1, 2, 3], 3, true),
-    new Pregunta ("¿Cómo se llama la serpiente de Voldemort? \n 1. NAGINI  \n 2. HEDWIG \n 3. DOBBY", [1, 2, 3], 1, true),
-    new Pregunta ("¿Con qué prenda de ropa logra ser libre Dobby? \n 1. GUANTE  \n 2. GORRO \n 3. MEDIA", [1, 2, 3], 3, true),
-    new Pregunta ("¿Quién es el creador de la piedra filosofal? \n 1. SIRIUS BLACK  \n 2. NICHOLAS FLAMEL \n 3. ALBUS DUMBLEDORE", [1, 2, 3], 2, true),
-    new Pregunta ("¿Qué hay que recitar para ocultar el contenido del mapa del merodeador? \n 1. TRAVESURA REALIZADA  \n 2. TRAVESURA OCULTA \n 3. TRAVESURA CAMUFLADA", [1, 2, 3], 1, true),
-    new Pregunta ("¿Cuántos horrocruxes tiene que destruir Harry Potter? \n 1. SEIS  \n 2. SIETE \n 3. OCHO", [1, 2, 3], 2, true),
-]
-
-
-//clase Jugador con las condiciones en las cuales inicia la partida nuestro jugador 
+//clase PartidaInicial con las condiciones en las cuales inicia la partida nuestro jugador 
 class PartidaInicial {
     constructor(nombre) {
         this.nombre = nombre;
@@ -47,8 +12,60 @@ class PartidaInicial {
     }
 }
 
+
+//clase pregunta para construir el cuestionario del quiz
+class Pregunta {
+    constructor(consigna, opcion1, opcion2, opcion3, opcionCorrecta) {
+        this.consigna = consigna;
+        this.opcion1 = opcion1;
+        this.opcion2 = opcion2;
+        this.opcion3 = opcion3;
+        this.opcionCorrecta = opcionCorrecta;
+    }
+}
+
+
+//crear las preguntas del juego utilizando la clase pregunta y las guardo en un array
+let preguntas = [
+    new Pregunta ("¿Cuántas Casas hay en Hogwarts?", "TRES", "CUATRO", "CINCO", "2"),
+    new Pregunta ("¿Cuál es el verdadero nombre de Voldemort?", "TOM RIDDLE", "RON RIDDLE", "BOB RIDDLE", "1"),
+    new Pregunta ("¿Cuál de las siguientes opciones NO es una reliquia de la muerte?", "VARITA DE SAUCO", "CAPA DE INVISIBILIDAD", "CALIZ DE FUEGO", "3"),
+    new Pregunta ("¿Cúal es el nombre el profesor Snape?", "ALBUS", "SEVERUS", "RUBEUS", "2"),
+    new Pregunta ("¿Qué animal tiene como mascota de Hermione?", "LECHUZA", "RATA", "GATO", "3"),
+    new Pregunta ("¿Cómo se llama la serpiente de Voldemort?", "NAGINI", "HEDWIG", "DOBBY", "1"),
+    new Pregunta ("¿Con qué prenda de ropa logra ser libre Dobby?", "GUANTE", "GORRO", "MEDIA", "3"),
+    new Pregunta ("¿Quién es el creador de la piedra filosofal?", "SIRIUS BLACK", "NICHOLAS FLAMEL", "ALBUS DUMBLEDORE", "2"),
+    new Pregunta ("¿Qué hay que recitar para ocultar el contenido del mapa del merodeador?", "TRAVESURA REALIZADA", "TRAVESURA OCULTA", "TRAVESURA CAMUFLADA", "1"),
+    new Pregunta ("¿Cuántos horrocruxes tiene que destruir Harry Potter?", "SEIS", "SIETE", "OCHO", "2"),
+]
+
+
+//tomo del html mi card container
+let cardContainer = document.querySelector('#preguntasContainer')
+
+function renderizarPreguntas(array, contenedor) {
+
+    // realizo un clon de la plantilla con los datos de cada pregunta
+    array.forEach( (pregunta) => {
+        clon = document.querySelector('.cardTemplate').content.cloneNode(true)
+        
+        //cambiar pregunta
+        clon.querySelector('h5').innerText = `${pregunta.consigna}`
+        // cambiar opcion 1
+        clon.querySelector('#opcion1').innerText = `1) ${pregunta.opcion1}`
+            // cambiar opcion 2
+        clon.querySelector('#opcion2').innerText = `2) ${pregunta.opcion2}`
+            // cambiar opcion 3
+        clon.querySelector('#opcion3').innerText = `3) ${pregunta.opcion3}`
+
+        contenedor.appendChild(clon)
+    })
+
+}
+
 //array que va a contener las preguntas aleatorias de la partida
 let preguntasAleatorias = [];
+
 
 //funcion para seleccionar de manera aleatoria las preguntas
 function eleccionPreguntas(preguntas, cantidad) {
@@ -63,53 +80,117 @@ function eleccionPreguntas(preguntas, cantidad) {
 }
 
 
-//funcion principal de ejecución del juego
-function juego() {
+//seccion del codigo para realizar el login, guardar nombre de usuario en una variable y comenzar el juego
+function login() {
+    //oculto el boton terminar
+    let botonTerminar = document.querySelector('#terminar')
+    botonTerminar.style.display ="none"
 
-    eleccionPreguntas(preguntas, 5)
+    //oculto el boton mostrar resultados
+    let botonMostrarResultados = document.querySelector('#mostrarResultados')
+    botonMostrarResultados.style.display ="none"
 
-    //marco cuando inicia el quiz
-    let tiempoInicio = Date.now();
+    //oculto la seccion resultados
+    let seccionResultado = document.querySelector('#resultados')
+    seccionResultado.style.display ="none"
 
-    let partida = new PartidaInicial 
+    //escucho eventos
+    let botonGuardarNombre = document.querySelector('#guardarNombre')
+    botonGuardarNombre.addEventListener('click', guardarNombre) 
 
-    for (let pregunta of preguntasAleatorias) {
-        
-        respuestaJugador = prompt(pregunta.consigna)
-
-        if (respuestaJugador == pregunta.respuesta) {
-            console.log("Respuesta Correcta 👍")
-            partida.respuestasCorrectas ++
-        } else if (respuestaJugador != pregunta.respuesta) {
-            partida.respuestasIncorrectas++
-            pregunta.acierto = false
-            console.log("Respuesta Incorrecta 👎")
-        } 
-    }
-
-    //marco cuando termina el quiz 
-    let tiempoFin = Date.now();
-
-    //calculo cuanto tiempo tardo en realizar el quiz
-    let tiempoTotal = tiempoFin - tiempoInicio
-
-    //mostrar el resultado de la partida
-    alert(`${nombre}! Estos son tus resultados:
-
-    El total de preguntas fueron: ${preguntas.length}.
-    Respuestas correctas: ${partida.respuestasCorrectas}.
-    Respuestas incorrectas: ${partida.respuestasIncorrectas}.
-    Tardaste ${tiempoTotal} ms en realizar el quiz.`)
-
-    let acertadas = preguntasAleatorias.filter((pregunta) => pregunta.acierto == true)
-    console.log(acertadas)
-
-    let equivocadas = preguntasAleatorias.filter((pregunta) => pregunta.acierto == false)
-    console.log(equivocadas)  
+    let botonComenzar = document.querySelector('#comenzarJuego')
+    botonComenzar.addEventListener('click', iniciarPartida) 
 }
 
-juego()
+function guardarNombre() {
+    nombre = document.querySelector('#nombre').value
+    localStorage.setItem('nombreJugador', nombre)
+
+} 
+
+login()
 
 
-//Despedir al jugador cuando decida dejar de jugar
-saludar('adios')
+//funcion principal de ejecución del juego
+function iniciarPartida() {
+    partida = new PartidaInicial
+
+    //mensaje sobre como responder correctamente el quiz 
+    let mensaje = document.querySelector('.mensaje')
+
+    mensaje.innerText= `⚠ ¡IMPORTANTE! ⚠ 
+    Tu respuesta debe ser escrita en NUMEROS. Escribe en el campo de respuesta 1, 2, o 3 segun corresponda... 
+    ¡Mucha suerte ${nombre}! 🍀`
+    
+
+    // llamo a las funciones que seleccionan preguntas aleatorias y renderizan las cards de preguntas
+    eleccionPreguntas(preguntas, 5)
+    renderizarPreguntas(preguntasAleatorias, cardContainer)
+
+    //oculto el login 
+    let seccionLogin = document.querySelector('#login')
+    seccionLogin.style.display ="none"
+
+    //muestro el boton terminar
+    let botonTerminar = document.querySelector('#terminar')
+    botonTerminar.style.display ="block"
+    botonTerminar.addEventListener('click', verificarRespuesta) 
+
+}
+
+function verificarRespuesta() {
+    let respuestasElegidas = document.querySelectorAll('.respuesta');
+
+    for (let i = 0; i < preguntasAleatorias.length; i++) {
+       
+        let respuestaElegida = respuestasElegidas[i];
+
+        if (respuestaElegida) {
+            respuestaJugador = respuestaElegida.value
+
+            if(respuestaJugador === preguntasAleatorias[i].opcionCorrecta) {
+            partida.respuestasCorrectas ++
+            } else {
+            partida.respuestasIncorrectas++
+            } 
+        }
+    }
+    
+    //muestro el boton mostrar resultados
+    let botonMostrarResultados = document.querySelector('#mostrarResultados')
+    botonMostrarResultados.style.display ="block"
+    botonMostrarResultados.addEventListener('click', resultados)
+}    
+
+function resultados() {
+    //muestro la seccion resultados
+    let seccionResultado = document.querySelector('#resultados')
+    seccionResultado.style.display ="block"
+    //oculto el quiz
+    let seccionJuego = document.querySelector('#juego')
+    seccionJuego.style.display ="none"
+
+    //guardo en el storage los resultados
+    let correctas = partida.respuestasCorrectas
+    localStorage.setItem('resCorrectas', correctas)
+
+    let incorrectas = partida.respuestasIncorrectas
+    localStorage.setItem('resIncorrectas', incorrectas)
+
+    //muestro los resultados en el html
+    let mensajeResultado = document.querySelector('.mensajeResultado')
+
+    mensajeResultado.innerText= `🏆 ¡RESULTADOS! 🏆  
+    Jugador: ${nombre}
+    Respuestas correctas: ${correctas}
+    Respuestas incorrectas: ${incorrectas}
+    `
+
+    //escucho un evento
+    let botonFinalizar = document.querySelector('#finalizar')
+    botonFinalizar.addEventListener('click', finalizarJuego)
+}
+
+function finalizarJuego() {
+    location.reload()
+}

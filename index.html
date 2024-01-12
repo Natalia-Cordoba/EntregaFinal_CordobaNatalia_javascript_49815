@@ -3,11 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Harry Potter 🧙‍♂️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Inicio - Quiz</title>
 </head>
-<body>
-    
 
+<body>
+    <h1>Harry Potter Quiz 🧙‍♂️</h1>
+
+    <!-- seccion de login del usuario -->
+    <section id="login" class="container">
+        <div class="login">
+            <h2>Jugador</h2>
+            <label for="nombre">Ingresa tu nombre</label>
+            <input id="nombre" type="text" placeholder="Ej: Rulo19">
+            <button class="nombre" id="guardarNombre">GUARDAR</button>
+            <button class="comenzar" id="comenzarJuego">COMENZAR</button>
+        </div>
+    </section>
+
+    <!-- seccion juego -->
+    <section id="juego" class="container">
+        <p class="mensaje"></p>
+        <!-- creo la planitilla de las card para las preguntas y la oculto con template para rederizarla desde js-->
+        <div class="card" id="preguntasContainer">
+            <template class="cardTemplate">
+                <div class="card-body">
+                    <h5 class="card-title">Pregunta</h5>
+
+                    <p class="card-text" id="opcion1">Opcion 1</p>
+                    <p class="card-text" id="opcion2">Opcion 2</p>
+                    <p class="card-text" id="opcion3">Opcion 3</p>
+
+                    <label for="respuesta">Ingresa tu respuesta</label>
+                    <input class="respuesta" type="text" placeholder="Ej: 1">
+                </div> 
+            </template>
+        </div>
+        <div>
+            <button class="terminar" id="terminar">TERMINAR</button>
+            <button class="resultados" id="mostrarResultados">RESULTADOS</button>
+        </div>
+    </section>
+
+    <section id="resultados"> 
+            <p class="mensajeResultado"></p>
+            <button class="finalizarBoton" id="finalizar">FINALIZAR</button>
+        <!-- </template> -->
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
 </body>
 </html>
