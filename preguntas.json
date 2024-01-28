@@ -1,0 +1,132 @@
+[
+    {
+        "categoria": "Cine",
+        "preguntas": [
+            {
+                "pregunta": "¿Qué actor dió voz a Woody en Toy Story?",
+                "opcion1": "Tim Allen",
+                "opcion2": "Tom Hanks",
+                "opcion3": "Mike Myers",
+                "opcionCorrecta": "Tom Hanks"
+            },
+            {
+                "pregunta": "¿Cuál es el nombre del director mexicano conocido por películas como El laberinto del fauno, Hellboy y El libro de la vida?",
+                "opcion1": "Arturo Ripstein",
+                "opcion2": "Alfonso Cuarón",
+                "opcion3": "Guillermo del Toro",
+                "opcionCorrecta": "Guillermo del Toro"
+            },
+            {
+                "pregunta": "Mejor película en los Óscar año 2023",
+                "opcion1": "Avatar 2",
+                "opcion2": "Todo a la vez en todas partes",
+                "opcion3": "Sin novedad en el frente",
+                "opcionCorrecta": "Todo a la vez en todas partes"
+            }
+        ]
+    },
+    {
+        "categoria": "Juegos",
+        "preguntas": [
+            {
+                "pregunta": "¿Quién es el protagonista de la saga de juegos The Legend of Zelda?",
+                "opcion1": "Impa",
+                "opcion2": "Link",
+                "opcion3": "Tingle",
+                "opcionCorrecta": "Link"
+            },
+            {
+                "pregunta": "¿Cuál es el nombre del dinosaurio verde que aparece como amigo de Mario en algunos juegos?",
+                "opcion1": "Yoshi",
+                "opcion2": "Toad",
+                "opcion3": "Luigi",
+                "opcionCorrecta": "Yoshi"
+            },
+            {
+                "pregunta": "Cuáles son los pokemones iniciales de la segunda generación?",
+                "opcion1": "Charmander, Bulbasaur, Squirtle",
+                "opcion2": "Chikorita, Cyndaquil, Torchic",
+                "opcion3": "Chikorita, Cyndaquil, Totodile",
+                "opcionCorrecta": "Chikorita, Cyndaquil, Totodile"
+            }
+        ]
+    },
+    {
+        "categoria": "Literatura",
+        "preguntas": [
+            {
+                "pregunta": "¿Cuál es la obra más famosa de William Shakespeare que cuenta la historia de dos amantes desafortunados?",
+                "opcion1": "Hamlet",
+                "opcion2": "Roméo y Julieta",
+                "opcion3": "La tempestad",
+                "opcionCorrecta": "Roméo y Julieta"
+            },
+            {
+                "pregunta": "En La Comunidad del Anillo de J. R. R. Tolkien, ¿quién es el último miembro en unirse a la Compañía del Anillo?",
+                "opcion1": "Legolas",
+                "opcion2": "Gimli",
+                "opcion3": "Aragorn",
+                "opcionCorrecta": "Legolas"
+            },
+            {
+                "pregunta": "¿Quién escribió Cien años de soledad?",
+                "opcion1": "Gabriel García Márquez",
+                "opcion2": "Jorge Luis Borges",
+                "opcion3": "Julio Cortázar",
+                "opcionCorrecta": "Gabriel García Márquez"
+            }
+        ]
+    },
+    {
+        "categoria": "Series",
+        "preguntas": [
+            {
+                "pregunta": "¿Cuál es el nombre de la serie en la que un profesor de química que se convierte en fabricante de metanfetaminas?",
+                "opcion1": "Prison Break",
+                "opcion2": "Breaking Bad",
+                "opcion3": "Narcos",
+                "opcionCorrecta": "Breaking Bad"
+            },
+            {
+                "pregunta": "En la serie friends, ¿cuál es el nombre del café favorito de los seis amigos donde pasan mucho tiempo?",
+                "opcion1": "Central Perk",
+                "opcion2": "Coffee Perk",
+                "opcion3": "Central Coffee",
+                "opcionCorrecta": "Central Perk"
+            },
+            {
+                "pregunta": "¿Cuál es el título del juego de rol que los personajes juegan en Stranger Things y que también influye en la trama de la serie?",
+                "opcion1": "Legado de Dragonholt",
+                "opcion2": "Calabozos y Dragones",
+                "opcion3": "Leyendas de andor",
+                "opcionCorrecta": "Calabozos y Dragones"
+            }
+        ]
+    },
+    {
+        "categoria": "Harry Potter",
+        "preguntas": [
+            {
+                "pregunta": "¿Qué casa de Hogwarts valora la astucia y la ambición?",
+                "opcion1": "Gryffindor",
+                "opcion2": "Ravenclaw",
+                "opcion3": "Slytherin",
+                "opcionCorrecta": "Slytherin"
+            },
+            {
+                "pregunta": "En Harry Potter y la cámara secreta, ¿cuál es la criatura mágica que petrifica a los estudiantes en la escuela?",
+                "opcion1": "Basilisco",
+                "opcion2": "Dementor",
+                "opcion3": "Colacuerno húngaro",
+                "opcionCorrecta": "Basilisco"
+            },
+            {
+                "pregunta": "¿Cuál de las siguientes opciones NO es una reliquia de la muerte?",
+                "opcion1": "Varita de Saúco",
+                "opcion2": "Capa de invisibilidad",
+                "opcion3": "Cáliz de fuego",
+                "opcionCorrecta": "Cáliz de fuego"
+            }
+        ]
+    }
+]
